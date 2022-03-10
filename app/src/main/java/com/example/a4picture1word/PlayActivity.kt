@@ -6,6 +6,7 @@ import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.core.view.isVisible
+import com.example.a4picture1word.databinding.ActivityMainBinding
 import com.example.a4picture1word.databinding.ActivityPlayBinding
 import com.example.a4picture1word.managers.GameManager
 import com.example.a4picture1word.models.QuestionData

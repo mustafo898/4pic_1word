@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_margin="15dp"
-            android:background="#00FFFFFF"
+            android:background="@drawable/button_darkgray_selector"
             android:src="@drawable/ic_keyboard_backspace_black_24dp"
             app:tint="@color/white" />
 
@@ -331,35 +331,58 @@
             android:background="@drawable/button_purple_selector"
             android:gravity="center"
             android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnHelp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_below="@id/v6"
+            android:layout_alignStart="@+id/v6"
+            android:background="@drawable/button_green_selector"
+            android:text="help"
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnClear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_below="@id/v10"
+            android:layout_alignEnd="@+id/v10"
+            android:layout_toEndOf="@id/btnHelp"
+            android:background="@drawable/button_red_selector"
+            android:text="clear"
+            android:textColor="@color/white" />
     </RelativeLayout>
 
-    <LinearLayout
-        android:id="@+id/bottomLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center"
-        android:layout_marginTop="35dp"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <ImageButton
-            android:id="@+id/btnHelp"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+    <!--    <LinearLayout
+            android:id="@+id/bottomLayout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#00FFFFFF"
-            android:src="@drawable/ic_help"
-            app:tint="@color/white" />
+            android:layout_gravity="bottom|center"
+            android:layout_marginTop="35dp"
+            android:gravity="center"
+            android:orientation="horizontal">
 
-        <ImageButton
-            android:id="@+id/btnDelete"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:background="#00FFFFFF"
-            android:src="@drawable/ic_delete"
-            app:tint="@color/white" />
+            <ImageButton
+                android:id="@+id/btnHelp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:background="#00FFFFFF"
+                android:src="@drawable/ic_help"
+                app:tint="@color/white" />
 
-    </LinearLayout>
+            <ImageButton
+                android:id="@+id/btnDelete"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:background="#00FFFFFF"
+                android:src="@drawable/ic_delete"
+                app:tint="@color/white" />
+
+        </LinearLayout> -->
 
 </LinearLayout>
