@@ -13,7 +13,6 @@ import com.example.a4picture1word.databinding.ActivitySplashBinding
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
     private lateinit var binding : ActivitySplashBinding
-    private var progressBar: ProgressBar? = null
     private var i = 0
     private val handler = Handler()
 

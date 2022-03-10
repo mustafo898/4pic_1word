@@ -3,10 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/4pic_1word/app/src/main/res/drawable/bg_level.xml" value="0.1325" />
+        <entry key="..\:/4pic_1word/app/src/main/res/drawable/button_black_selector.xml" value="0.1325" />
         <entry key="..\:/4pic_1word/app/src/main/res/drawable/button_lightpurple_selector.xml" value="0.196" />
+        <entry key="..\:/4pic_1word/app/src/main/res/drawable/button_main_selector.xml" value="0.1325" />
         <entry key="..\:/4pic_1word/app/src/main/res/drawable/button_purple_selector.xml" value="0.196" />
+        <entry key="..\:/4pic_1word/app/src/main/res/drawable/button_white_selector.xml" value="0.196" />
+        <entry key="..\:/4pic_1word/app/src/main/res/drawable/ic_level.xml" value="0.196" />
+        <entry key="..\:/4pic_1word/app/src/main/res/drawable/ic_settings.xml" value="0.196" />
         <entry key="..\:/4pic_1word/app/src/main/res/drawable/ic_trophy_svgrepo_com.xml" value="0.1325" />
-        <entry key="..\:/4pic_1word/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/4pic_1word/app/src/main/res/drawable/shape_raduis.xml" value="0.1325" />
+        <entry key="..\:/4pic_1word/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/4pic_1word/app/src/main/res/layout/activity_play.xml" value="0.2" />
+        <entry key="..\:/4pic_1word/app/src/main/res/layout/activity_settings.xml" value="0.14" />
+        <entry key="..\:/4pic_1word/app/src/main/res/layout/activity_splash.xml" value="0.20416666666666666" />
         <entry key="..\:/4pic_1word/app/src/main/res/layout/activity_win.xml" value="0.20416666666666666" />
         <entry key="..\:/4pic_1word/app/src/main/res/layout/win_dialog.xml" value="0.25" />
       </map>
