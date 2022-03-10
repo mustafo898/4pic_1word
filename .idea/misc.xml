@@ -3,15 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/4pic_1word/app/src/main/res/drawable/actionbar_background.xml" value="0.1325" />
-        <entry key="..\:/4pic_1word/app/src/main/res/drawable/button_lightpurple_selector.xml" value="0.1325" />
-        <entry key="..\:/4pic_1word/app/src/main/res/drawable/button_purple_selector.xml" value="0.1325" />
-        <entry key="..\:/4pic_1word/app/src/main/res/drawable/ic_delete.xml" value="0.1325" />
-        <entry key="..\:/4pic_1word/app/src/main/res/drawable/ic_help.xml" value="0.1325" />
-        <entry key="..\:/4pic_1word/app/src/main/res/drawable/ic_keyboard_backspace_black_24dp.xml" value="0.196" />
-        <entry key="..\:/4pic_1word/app/src/main/res/font/fonts.xml" value="0.23076923076923078" />
-        <entry key="..\:/4pic_1word/app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="..\:/4pic_1word/app/src/main/res/layout/activity_splash.xml" value="0.20416666666666666" />
+        <entry key="..\:/4pic_1word/app/src/main/res/drawable/button_lightpurple_selector.xml" value="0.196" />
+        <entry key="..\:/4pic_1word/app/src/main/res/drawable/button_purple_selector.xml" value="0.196" />
+        <entry key="..\:/4pic_1word/app/src/main/res/drawable/ic_trophy_svgrepo_com.xml" value="0.1325" />
+        <entry key="..\:/4pic_1word/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/4pic_1word/app/src/main/res/layout/activity_win.xml" value="0.20416666666666666" />
+        <entry key="..\:/4pic_1word/app/src/main/res/layout/win_dialog.xml" value="0.25" />
       </map>
     </option>
   </component>

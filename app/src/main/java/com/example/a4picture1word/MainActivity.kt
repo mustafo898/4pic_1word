@@ -13,6 +13,12 @@ import com.example.a4picture1word.utils.gone
 import com.example.a4picture1word.utils.invisible
 import com.example.a4picture1word.utils.isInvisible
 import com.example.a4picture1word.utils.visible
+import com.thecode.aestheticdialogs.AestheticDialog
+import com.thecode.aestheticdialogs.DialogAnimation
+
+import com.thecode.aestheticdialogs.DialogStyle
+import com.thecode.aestheticdialogs.DialogType
+
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -26,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         getAllQuestions()
         gameManager = GameManager(questionsList, 0, 0)
         loadViews()
@@ -96,7 +103,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun letterBtnClick(button: Button) {
-        if (button.isVisible && wordList[gameManager.getWordSize()-1].text.isEmpty()) {
+        if (button.isVisible && wordList[gameManager.getWordSize() - 1].text.isEmpty()) {
             button.invisible()
             var word = button.text.toString()
             for (i in 0 until wordList.size) {
@@ -141,5 +148,31 @@ class MainActivity : AppCompatActivity() {
             lettersList[i].visible()
             lettersList[i].text = "${gameManager.getLetters()[i]}"
         }
+    }
+
+    fun WinDialogShow() {
+        var builder: AestheticDialog.Builder =
+            AestheticDialog.Builder(
+                this,
+                DialogStyle.EMOTION,
+                DialogType.SUCCESS
+            );
+
+        // title
+        builder.setTitle("CORRECT")
+
+        // message
+        builder.setMessage("Tap anywhere to continue")
+
+        // dialog animation
+        builder.setAnimation(DialogAnimation.IN_OUT);
+        builder.show()
+
+        // dialogStyle:
+        /* FLASH, CONNECTIFY, TOASTER, EMOJI, EMOTION, DRAKE, RAINBOW, FLAT*/
+
+        // dialog animations:
+        /* FADE, CARD, DEFAULT, DIAGONAL, IN_OUT, SHRINK, SLIDE_DOWN, SLIDE_LEFT
+        SLIDE_RIGHT SLIDE_UP SPIN SPLIT SWIPE_LEFT SWIPE_RIGHT WINDMILL ZOOM*/
     }
 }
