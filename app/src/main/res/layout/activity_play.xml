@@ -203,7 +203,7 @@
             android:layout_marginBottom="5dp"
             android:background="@drawable/button_purple_selector"
             android:gravity="center"
-            android:textColor="@color/white" />
+            android:textColor="#0A0F15" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/v2"
@@ -218,7 +218,7 @@
             android:layout_toRightOf="@id/v1"
             android:background="@drawable/button_purple_selector"
             android:gravity="center"
-            android:textColor="@color/white" />
+            android:textColor="#0A0F15" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/v3"
@@ -233,7 +233,7 @@
             android:layout_toRightOf="@id/v2"
             android:background="@drawable/button_purple_selector"
             android:gravity="center"
-            android:textColor="@color/white" />
+            android:textColor="#0A0F15" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/v4"
@@ -248,7 +248,7 @@
             android:layout_toRightOf="@id/v3"
             android:background="@drawable/button_purple_selector"
             android:gravity="center"
-            android:textColor="@color/white" />
+            android:textColor="#0A0F15" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/v5"
@@ -263,7 +263,7 @@
             android:layout_toRightOf="@id/v4"
             android:background="@drawable/button_purple_selector"
             android:gravity="center"
-            android:textColor="@color/white" />
+            android:textColor="#0A0F15" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/v6"
@@ -271,13 +271,13 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_below="@id/v1"
-            android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
+            android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
             android:layout_marginBottom="5dp"
             android:background="@drawable/button_purple_selector"
             android:gravity="center"
-            android:textColor="@color/white" />
+            android:textColor="#0A0F15" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/v7"
@@ -293,7 +293,7 @@
             android:layout_toRightOf="@id/v1"
             android:background="@drawable/button_purple_selector"
             android:gravity="center"
-            android:textColor="@color/white" />
+            android:textColor="#0A0F15" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/v8"
@@ -305,7 +305,7 @@
             android:layout_toRightOf="@id/v2"
             android:background="@drawable/button_purple_selector"
             android:gravity="center"
-            android:textColor="@color/white" />
+            android:textColor="#0A0F15" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/v9"
@@ -317,7 +317,7 @@
             android:layout_toRightOf="@id/v3"
             android:background="@drawable/button_purple_selector"
             android:gravity="center"
-            android:textColor="@color/white"
+            android:textColor="#0A0F15"
             android:visibility="invisible" />
 
         <androidx.appcompat.widget.AppCompatButton
@@ -330,7 +330,7 @@
             android:layout_toRightOf="@id/v4"
             android:background="@drawable/button_purple_selector"
             android:gravity="center"
-            android:textColor="@color/white" />
+            android:textColor="#0A0F15" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnHelp"

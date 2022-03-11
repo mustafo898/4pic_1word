@@ -4,9 +4,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.AppCompatButton
 import androidx.core.view.isVisible
-import com.example.a4picture1word.databinding.ActivityMainBinding
 import com.example.a4picture1word.databinding.ActivityPlayBinding
 import com.example.a4picture1word.managers.GameManager
 import com.example.a4picture1word.models.QuestionData
@@ -16,24 +14,21 @@ import com.example.a4picture1word.utils.isInvisible
 import com.example.a4picture1word.utils.visible
 import com.thecode.aestheticdialogs.AestheticDialog
 import com.thecode.aestheticdialogs.DialogAnimation
-
 import com.thecode.aestheticdialogs.DialogStyle
 import com.thecode.aestheticdialogs.DialogType
-
 
 class PlayActivity : AppCompatActivity() {
     lateinit var binding: ActivityPlayBinding
     lateinit var questionsList: ArrayList<QuestionData>
     lateinit var imagesList: ArrayList<ImageView>
-    lateinit var wordList: ArrayList<AppCompatButton>
-    lateinit var lettersList: ArrayList<AppCompatButton>
+    lateinit var wordList: ArrayList<Button>
+    lateinit var lettersList: ArrayList<Button>
     lateinit var gameManager: GameManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPlayBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         getAllQuestions()
         gameManager = GameManager(questionsList, 0, 0)
         loadViews()
@@ -88,7 +83,7 @@ class PlayActivity : AppCompatActivity() {
         /////////
         wordList = ArrayList()
         for (i in 0 until binding.wordLayout.childCount) {
-            wordList.add(binding.wordLayout.getChildAt(i) as AppCompatButton)
+            wordList.add(binding.wordLayout.getChildAt(i) as Button)
             wordList[i].setOnClickListener {
                 wordBtnClick(it as Button)
             }
@@ -96,7 +91,7 @@ class PlayActivity : AppCompatActivity() {
         ///////////
         lettersList = ArrayList()
         for (i in 0 until binding.letterLayout.childCount) {
-            lettersList.add(binding.letterLayout.getChildAt(i) as AppCompatButton)
+            lettersList.add(binding.letterLayout.getChildAt(i) as Button)
             lettersList[i].setOnClickListener {
                 letterBtnClick(it as Button)
             }
@@ -104,7 +99,7 @@ class PlayActivity : AppCompatActivity() {
     }
 
     private fun letterBtnClick(button: Button) {
-        if (button.isVisible && wordList[gameManager.getWordSize() - 1].text.isEmpty()) {
+        if (button.isVisible && wordList[gameManager.getWordSize()-1].text.isEmpty()) {
             button.invisible()
             var word = button.text.toString()
             for (i in 0 until wordList.size) {
