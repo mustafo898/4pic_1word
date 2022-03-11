@@ -15,8 +15,6 @@ import com.example.a4picture1word.utils.invisible
 import com.example.a4picture1word.utils.isInvisible
 import com.example.a4picture1word.utils.visible
 import com.thecode.aestheticdialogs.AestheticDialog
-import com.thecode.aestheticdialogs.DialogAnimation
-
 import com.thecode.aestheticdialogs.DialogStyle
 import com.thecode.aestheticdialogs.DialogType
 
@@ -157,7 +155,7 @@ class PlayActivity : AppCompatActivity() {
                 this,
                 DialogStyle.EMOTION,
                 DialogType.SUCCESS
-            );
+            )
 
         // title
         builder.setTitle("CORRECT")
@@ -166,7 +164,6 @@ class PlayActivity : AppCompatActivity() {
         builder.setMessage("Tap anywhere to continue")
 
         // dialog animation
-        builder.setAnimation(DialogAnimation.IN_OUT);
         builder.show()
 
         // dialogStyle:
