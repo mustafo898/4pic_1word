@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">4 pic 1 word</string>
     <string name="background">background</string>
+    <string name="clear">clear</string>
+    <string name="help">help</string>
+    <string name="submit">Submit</string>
 </resources>

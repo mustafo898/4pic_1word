@@ -3,6 +3,7 @@ package com.example.a4picture1word
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.core.view.isVisible
@@ -28,7 +29,7 @@ class PlayActivity : AppCompatActivity() {
     lateinit var wordList: ArrayList<AppCompatButton>
     lateinit var lettersList: ArrayList<AppCompatButton>
     lateinit var gameManager: GameManager
-
+    var string = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPlayBinding.inflate(layoutInflater)
@@ -38,6 +39,8 @@ class PlayActivity : AppCompatActivity() {
         gameManager = GameManager(questionsList, 0, 0)
         loadViews()
         loadDataToView()
+
+
     }
 
     private fun getAllQuestions() {
@@ -101,7 +104,51 @@ class PlayActivity : AppCompatActivity() {
                 letterBtnClick(it as Button)
             }
         }
+
+        binding.submit.setOnClickListener {
+            if (check_()) {
+                Toast.makeText(this, "Win", Toast.LENGTH_LONG).show()
+                Thread.sleep(500)
+                gameManager.coins += 15
+                binding.coin.text = gameManager.coins.toString()
+
+                gameManager.level++
+
+                var level_ = gameManager.level
+
+                binding.level.text = (++level_).toString()
+                getAllQuestions()
+                loadDataToView()
+                string = ""
+            } else {
+                Toast.makeText(this, "Incorrect", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        binding.btnClear.setOnClickListener {
+            clear()
+        }
     }
+
+    fun check_(): Boolean {
+        for (i in 0 until gameManager.getWordSize()) {
+            string += wordList[i].text
+        }
+        return gameManager.check(string)
+    }
+
+    fun clear(){
+        for (i in 0 until gameManager.getWordSize()){
+            wordList[i].text=""
+        }
+        string=""
+        for (i in 0 until lettersList.size) {
+            lettersList[i].visible()
+            lettersList[i].text = "${gameManager.getLetters()[i]}"
+        }
+    }
+
+
 
     private fun letterBtnClick(button: Button) {
         if (button.isVisible && wordList[gameManager.getWordSize() - 1].text.isEmpty()) {
@@ -129,9 +176,13 @@ class PlayActivity : AppCompatActivity() {
                 }
             }
         }
+        string = ""
     }
 
     private fun loadDataToView() {
+        var level_ = gameManager.level
+        binding.level.text = (++level_).toString()
+        binding.coin.text = "0"
         for (i in 0 until imagesList.size) {
             imagesList[i].setImageResource(gameManager.getQuestions()[i])
         }
@@ -149,31 +200,5 @@ class PlayActivity : AppCompatActivity() {
             lettersList[i].visible()
             lettersList[i].text = "${gameManager.getLetters()[i]}"
         }
-    }
-
-    fun WinDialogShow() {
-        var builder: AestheticDialog.Builder =
-            AestheticDialog.Builder(
-                this,
-                DialogStyle.EMOTION,
-                DialogType.SUCCESS
-            );
-
-        // title
-        builder.setTitle("CORRECT")
-
-        // message
-        builder.setMessage("Tap anywhere to continue")
-
-        // dialog animation
-        builder.setAnimation(DialogAnimation.IN_OUT);
-        builder.show()
-
-        // dialogStyle:
-        /* FLASH, CONNECTIFY, TOASTER, EMOJI, EMOTION, DRAKE, RAINBOW, FLAT*/
-
-        // dialog animations:
-        /* FADE, CARD, DEFAULT, DIAGONAL, IN_OUT, SHRINK, SLIDE_DOWN, SLIDE_LEFT
-        SLIDE_RIGHT SLIDE_UP SPIN SPLIT SWIPE_LEFT SWIPE_RIGHT WINDMILL ZOOM*/
     }
 }
