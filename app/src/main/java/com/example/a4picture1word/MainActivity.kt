@@ -48,7 +48,6 @@ class MainActivity : AppCompatActivity() {
         questionsList = ArrayList()
         questionsList.add(
             QuestionData(
-                1,
                 arrayListOf(
                     R.drawable.img1,
                     R.drawable.img1,
@@ -61,7 +60,6 @@ class MainActivity : AppCompatActivity() {
         )
         questionsList.add(
             QuestionData(
-                2,
                 arrayListOf(
                     R.drawable.img1,
                     R.drawable.img1,
@@ -74,7 +72,6 @@ class MainActivity : AppCompatActivity() {
         )
         questionsList.add(
             QuestionData(
-                3,
                 arrayListOf(
                     R.drawable.img1,
                     R.drawable.img1,
@@ -171,8 +168,31 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun shuffle(){
-//        var otherLetter =
-    }
+//    fun shuffleLetter(i: Int): String {
+//        val randLetter = "qwertyuiopasdfghjklzxcvbnm"
+//        val result = StringBuilder()
+//        while (i > 0) {
+//            val rand = Random()
+//            result.append(randLetter[rand.nextInt(randLetter.length)])
+//        }
+//        return result.toString()
+//    }
+//
+//    fun size():Int{
+//        var size_ = gameManager
+//        return size_.getLettersSize() - size_.getWordSize()
+//    }
+//
+//    fun shuffle():String{
+//        var randChar = gameManager
+//        var randWord = randChar.getWord().toCharArray()
+//        randWord.shuffle()
+//
+//        var random = shuffleLetter(size()).toCharArray() + randWord
+//        random.shuffle()
+//
+//        return random.toString()
+//    }
+
 }
 
