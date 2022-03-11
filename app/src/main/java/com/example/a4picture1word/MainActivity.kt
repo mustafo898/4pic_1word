@@ -15,8 +15,9 @@ class MainActivity : AppCompatActivity() {
         // dialogni shunday qo'yib keting
         binding.btnPlay.setOnClickListener {
             finish()
-            val intent = Intent(this, PlayActivity::class.java)
+            var intent = Intent(this, PlayActivity::class.java)
             startActivity(intent)
         }
+
     }
 }

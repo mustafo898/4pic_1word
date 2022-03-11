@@ -61,19 +61,28 @@
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
-        <ImageView
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:src="@drawable/ic_coins" />
+            android:background="@drawable/bg_darkgray_selector"
+            android:paddingHorizontal="15dp"
+            android:layout_margin="15dp"
+            android:gravity="center">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:padding="4dp"
-            android:text="120"
-            android:textColor="@android:color/white"
-            android:textSize="25sp" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_coins" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+               android:padding="8dp"
+                android:text="120"
+                android:textColor="@android:color/white"
+                android:textSize="25sp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
     </LinearLayout>
 
