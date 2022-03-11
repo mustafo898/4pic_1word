@@ -23,6 +23,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="1"
+            android:id="@+id/level"
             android:textColor="@android:color/white"
             android:textSize="28sp" />
 
@@ -37,6 +38,7 @@
             android:gravity="center"
             android:padding="4dp"
             android:text="120"
+            android:id="@+id/coins"
             android:textColor="@android:color/white"
             android:textSize="16sp" />
 
@@ -214,5 +216,20 @@
             android:layout_toEndOf="@id/v4"
             android:layout_toRightOf="@id/v4" />
     </RelativeLayout>
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/submit"
+        android:textSize="24sp"
+        />
+
+    <Button
+        android:id="@+id/clear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/clear"
+        android:textSize="24sp"
+        />
 
 </LinearLayout>

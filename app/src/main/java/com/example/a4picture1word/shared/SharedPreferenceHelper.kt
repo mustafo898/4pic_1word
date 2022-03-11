@@ -7,6 +7,7 @@ class SharedPreferenceHelper(var context: Context) {
 
     companion object{
         const val LEVEL_IN_GAME = "LEVEL_IN_GAME"
+        const val COIN_IN_GAME = "COIN_IN_GAME"
     }
 
     private var preferences: SharedPreferences =
@@ -20,7 +21,22 @@ class SharedPreferenceHelper(var context: Context) {
         editor.apply()
     }
 
-    fun getLevel() = preferences.getInt(LEVEL_IN_GAME,1)
+    fun getLevel() = preferences.getInt(LEVEL_IN_GAME,0)
 
+    fun setCoins(coins: Int){
+        editor = preferences.edit()
+        editor.putInt(LEVEL_IN_GAME, coins)
+        editor.apply()
+    }
+
+    fun getCoins() = preferences.getInt(COIN_IN_GAME,0)
+
+    fun setLastCoin(LastCoinCount: Int){
+        editor = preferences.edit()
+        editor.putInt("LAST_COIN_COUNT",LastCoinCount)
+        editor.apply()
+    }
+
+    fun getLastCoinCount() = preferences.getInt("LAST_COIN_COUNT",0)
 
 }

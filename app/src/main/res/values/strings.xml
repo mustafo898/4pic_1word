@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">4 PICTURE 1 WORD</string>
+    <string name="submit">Submit</string>
+    <string name="clear">Clear</string>
 </resources>

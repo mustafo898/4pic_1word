@@ -6,7 +6,7 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import com.example.a4picture1word.databinding.ActivityMainBinding
+import com.example.a4picture1word.databinding.ActivityPlayBinding
 //import uz.micro.star.lesson_9.databinding.ActivityMainBinding
 import com.example.a4picture1word.manager.GameManager
 import com.example.a4picture1word.models.QuestionData
@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         SharedPreferenceHelper(this)
     }
     private var string: String = ""
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityPlayBinding
     lateinit var questionsList: ArrayList<QuestionData>
     lateinit var imagesList: ArrayList<ImageView>
     lateinit var wordList: ArrayList<Button>
@@ -34,14 +34,56 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityPlayBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        gameManager = GameManager(questionsList, 1, 0)
-
         getAllQuestions()
+        gameManager = GameManager(questionsList, 0, 0)
+
+        print(shared.getLevel())
         loadViews()
         loadDataToView()
+
+        binding.submit.setOnClickListener {
+            if (check_()){
+                Toast.makeText(this, "Win", Toast.LENGTH_LONG).show()
+                Thread.sleep(500)
+                gameManager.coins+=15
+                binding.coins.text = gameManager.coins.toString()
+
+                gameManager.level++
+
+                var level_ = gameManager.level
+
+                binding.level.text = (++level_).toString()
+                getAllQuestions()
+                loadDataToView()
+                string=""
+            }
+            else{
+                Toast.makeText(this, "Incorrect", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        binding.clear.setOnClickListener {
+            clean()
+
+        }
+    }
+
+    fun clean(){
+        for (i in 0 until gameManager.getWordSize()){
+            wordList[i].text = ""
+        }
+        for (i in 0 until lettersList.size) {
+            lettersList[i].visible()
+            lettersList[i].text = "${gameManager.getLetters()[i]}"
+        }
+        string=""
+    }
+
+    fun help(){
+
     }
 
     private fun getAllQuestions() {
@@ -56,6 +98,7 @@ class MainActivity : AppCompatActivity() {
                 ),
                 "Hello",
                 "asldfgheloq"
+//                shuffle()
             )
         )
         questionsList.add(
@@ -85,6 +128,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadViews() {
+        var level_ = gameManager.level
+        binding.level.text = (++level_).toString()
+        binding.coins.text = "0"
         imagesList = ArrayList()
         for (i in 0 until binding.imagesLayout.childCount) {
             imagesList.add(binding.imagesLayout.getChildAt(i) as ImageView)
@@ -105,6 +151,8 @@ class MainActivity : AppCompatActivity() {
                 letterBtnClick(it as Button)
             }
         }
+
+
     }
 
     private fun letterBtnClick(button: Button) {
@@ -119,18 +167,10 @@ class MainActivity : AppCompatActivity() {
                     break
                 }
             }
-
-            for (i in 0 until wordList[gameManager.getWordSize()-1].length()){
-                string+=wordList[i].toString()
-                if (gameManager.check(string)){
-                    Toast.makeText(this, "win", Toast.LENGTH_SHORT).show()
-                }
-            }
         }
     }
 
     private fun wordBtnClick(it: Button) {
-
         if (it.text.isNotEmpty()) {
             val word = it.text.toString()
             it.text = ""
@@ -145,6 +185,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+        string=""
     }
 
     private fun loadDataToView() {
@@ -166,33 +207,22 @@ class MainActivity : AppCompatActivity() {
             lettersList[i].visible()
             lettersList[i].text = "${gameManager.getLetters()[i]}"
         }
+
     }
 
-//    fun shuffleLetter(i: Int): String {
-//        val randLetter = "qwertyuiopasdfghjklzxcvbnm"
-//        val result = StringBuilder()
-//        while (i > 0) {
-//            val rand = Random()
-//            result.append(randLetter[rand.nextInt(randLetter.length)])
-//        }
-//        return result.toString()
-//    }
-//
-//    fun size():Int{
-//        var size_ = gameManager
-//        return size_.getLettersSize() - size_.getWordSize()
-//    }
-//
-//    fun shuffle():String{
-//        var randChar = gameManager
-//        var randWord = randChar.getWord().toCharArray()
-//        randWord.shuffle()
-//
-//        var random = shuffleLetter(size()).toCharArray() + randWord
-//        random.shuffle()
-//
-//        return random.toString()
-//    }
+    fun check_(): Boolean {
+        for (i in 0 until gameManager.getWordSize()){
+            string+=wordList[i].text
+        }
+        return gameManager.check(string)
+    }
 
+//    override fun onStop() {
+//
+//        shared.setLevel(gameManager.level)
+//        shared.setLevel(gameManager.coins)
+//
+//        super.onStop()
+//    }
 }
 
