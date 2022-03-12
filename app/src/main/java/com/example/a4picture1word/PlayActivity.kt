@@ -6,6 +6,7 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
+import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import com.example.a4picture1word.databinding.ActivityMainBinding
 import com.example.a4picture1word.databinding.ActivityPlayBinding
@@ -40,7 +41,24 @@ class PlayActivity : AppCompatActivity() {
         loadViews()
         loadDataToView()
 
+        binding.submit.setOnClickListener {
+            if (check_()) {
+                Toast.makeText(this, "Win", Toast.LENGTH_LONG).show()
+                Thread.sleep(500)
+                gameManager.coins += 15
+                binding.coin.text = gameManager.coins.toString()
+                gameManager.level++
 
+                var level_ = gameManager.level
+
+                binding.level.text = (++level_).toString()
+                getAllQuestions()
+                loadDataToView()
+                string = ""
+            } else {
+                Toast.makeText(this, "Incorrect", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     private fun getAllQuestions() {
@@ -53,7 +71,7 @@ class PlayActivity : AppCompatActivity() {
                     R.drawable.img1,
                     R.drawable.img1,
                 ),
-                "Helo",
+                "Heloq",
                 "asdfgheloq"
             )
         )
@@ -105,31 +123,18 @@ class PlayActivity : AppCompatActivity() {
             }
         }
 
-        binding.submit.setOnClickListener {
-            if (check_()) {
-                Toast.makeText(this, "Win", Toast.LENGTH_LONG).show()
-                Thread.sleep(500)
-                gameManager.coins += 15
-                binding.coin.text = gameManager.coins.toString()
 
-                gameManager.level++
-
-                var level_ = gameManager.level
-
-                binding.level.text = (++level_).toString()
-                getAllQuestions()
-                loadDataToView()
-                string = ""
-            } else {
-                Toast.makeText(this, "Incorrect", Toast.LENGTH_SHORT).show()
-            }
-        }
 
         binding.btnClear.setOnClickListener {
             clear()
         }
+
+        binding.btnHelp.setOnClickListener {
+            help()
+        }
     }
 
+    // Clear wordList
     fun check_(): Boolean {
         for (i in 0 until gameManager.getWordSize()) {
             string += wordList[i].text
@@ -137,17 +142,17 @@ class PlayActivity : AppCompatActivity() {
         return gameManager.check(string)
     }
 
-    fun clear(){
-        for (i in 0 until gameManager.getWordSize()){
-            wordList[i].text=""
+    //Check
+    fun clear() {
+        for (i in 0 until gameManager.getWordSize()) {
+            wordList[i].text = ""
         }
-        string=""
+        string = ""
         for (i in 0 until lettersList.size) {
             lettersList[i].visible()
             lettersList[i].text = "${gameManager.getLetters()[i]}"
         }
     }
-
 
 
     private fun letterBtnClick(button: Button) {
@@ -186,7 +191,7 @@ class PlayActivity : AppCompatActivity() {
         for (i in 0 until imagesList.size) {
             imagesList[i].setImageResource(gameManager.getQuestions()[i])
         }
-        /////////
+
         for (i in 0 until wordList.size) {
             if (gameManager.getWordSize() > i) {
                 wordList[i].visible()
@@ -195,10 +200,29 @@ class PlayActivity : AppCompatActivity() {
                 wordList[i].gone()
             }
         }
-        ////////
+
         for (i in 0 until lettersList.size) {
             lettersList[i].visible()
             lettersList[i].text = "${gameManager.getLetters()[i]}"
+        }
+    }
+
+    fun help(){
+        for (i in 0 until gameManager.getWordSize()){
+            if(wordList[i].text.isEmpty()){
+                wordList[i].text = gameManager.getWordLowercase()[i].toString()
+                helpLetter(wordList[i])
+                break
+            }
+        }
+    }
+
+    fun helpLetter(help : Button){
+        for (i in 0 until lettersList.size){
+            if (lettersList[i].text == help.text){
+                lettersList[i].invisible()
+                break
+            }
         }
     }
 }
