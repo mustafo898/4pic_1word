@@ -225,4 +225,9 @@ class PlayActivity : AppCompatActivity() {
         }
     }
 
+    override fun onStop() {
+        shared.setLevel(gameManager.level)
+        shared.setCoin(gameManager.coins)
+        super.onStop()
+    }
 }
