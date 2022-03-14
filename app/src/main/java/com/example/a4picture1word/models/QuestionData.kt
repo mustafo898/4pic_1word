@@ -1,7 +1,9 @@
 package com.example.a4picture1word.models
 
+import android.widget.ImageView
+
 data class QuestionData(
-    var imageList: ArrayList<Int>,
+    var image: Int,
     var word: String,
     var letters: String
 )

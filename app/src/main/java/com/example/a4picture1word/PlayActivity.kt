@@ -1,5 +1,6 @@
 package com.example.a4picture1word
 
+import android.app.backup.SharedPreferencesBackupHelper
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
@@ -12,6 +13,7 @@ import com.example.a4picture1word.databinding.ActivityMainBinding
 import com.example.a4picture1word.databinding.ActivityPlayBinding
 import com.example.a4picture1word.managers.GameManager
 import com.example.a4picture1word.models.QuestionData
+import com.example.a4picture1word.shared.Shared
 import com.example.a4picture1word.utils.gone
 import com.example.a4picture1word.utils.invisible
 import com.example.a4picture1word.utils.isInvisible
@@ -31,26 +33,31 @@ class PlayActivity : AppCompatActivity() {
     lateinit var lettersList: ArrayList<AppCompatButton>
     lateinit var gameManager: GameManager
     var string = ""
+    val shared by lazy {
+        Shared(this)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPlayBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         getAllQuestions()
-        gameManager = GameManager(questionsList, 0, 0)
+        gameManager = GameManager(questionsList, shared.getLevel(),shared.getCoin())
         loadViews()
         loadDataToView()
-
+        binding.coin.text = "15"
+        binding.coin.text = shared.getCoin().toString()
         binding.submit.setOnClickListener {
             if (check_()) {
                 Toast.makeText(this, "Win", Toast.LENGTH_LONG).show()
                 Thread.sleep(500)
-                gameManager.coins += 15
-                binding.coin.text = gameManager.coins.toString()
+
                 gameManager.level++
+                gameManager.coins += 4
 
                 var level_ = gameManager.level
 
+                binding.coin.text = gameManager.coins.toString()
                 binding.level.text = (++level_).toString()
                 getAllQuestions()
                 loadDataToView()
@@ -64,48 +71,40 @@ class PlayActivity : AppCompatActivity() {
     private fun getAllQuestions() {
         questionsList = ArrayList()
         questionsList.add(
-            QuestionData(
-                arrayListOf(
-                    R.drawable.img1,
-                    R.drawable.img1,
-                    R.drawable.img1,
-                    R.drawable.img1,
-                ),
-                "Heloq",
-                "asdfgheloq"
-            )
+            QuestionData(R.drawable.food,"food","fosasxovxd")
         )
         questionsList.add(
-            QuestionData(
-                arrayListOf(
-                    R.drawable.img1,
-                    R.drawable.img1,
-                    R.drawable.img1,
-                    R.drawable.img1,
-                ),
-                "Salom",
-                "Stajlnsuom"
-            )
+            QuestionData(R.drawable.book,"book","odfokqvbkv")
         )
         questionsList.add(
-            QuestionData(
-                arrayListOf(
-                    R.drawable.img1,
-                    R.drawable.img1,
-                    R.drawable.img1,
-                    R.drawable.img1,
-                ),
-                "tank",
-                "tfqtoanykk"
-            )
+            QuestionData(R.drawable.black,"black","bdsldaxcfk")
+        )
+        questionsList.add(
+            QuestionData(R.drawable.butter,"butter","vabstetaru")
+        )
+        questionsList.add(
+            QuestionData(R.drawable.sport,"sport","btkdoptasr")
+        )
+        questionsList.add(
+            QuestionData(R.drawable.king,"king","bnkdimnasg")
+        )
+        questionsList.add(
+            QuestionData(R.drawable.pet,"pet","bnkpimnest")
+        )
+        questionsList.add(
+            QuestionData(R.drawable.pen,"pen","bpkdimnase")
+        )
+        questionsList.add(
+            QuestionData(R.drawable.money,"money","ynknimeaso")
         )
     }
 
     private fun loadViews() {
         imagesList = ArrayList()
-        for (i in 0 until binding.imagesLayout.childCount) {
-            imagesList.add(binding.imagesLayout.getChildAt(i) as ImageView)
-        }
+//        for (i in 0 until binding.imagesLayout.childCount) {
+//            imagesList.add(binding.imagesLayout.getChildAt(i) as ImageView)
+//        }
+//        binding.image
         /////////
         wordList = ArrayList()
         for (i in 0 until binding.wordLayout.childCount) {
@@ -122,8 +121,6 @@ class PlayActivity : AppCompatActivity() {
                 letterBtnClick(it as Button)
             }
         }
-
-
 
         binding.btnClear.setOnClickListener {
             clear()
@@ -187,10 +184,12 @@ class PlayActivity : AppCompatActivity() {
     private fun loadDataToView() {
         var level_ = gameManager.level
         binding.level.text = (++level_).toString()
-        binding.coin.text = "0"
-        for (i in 0 until imagesList.size) {
-            imagesList[i].setImageResource(gameManager.getQuestions()[i])
-        }
+        binding.coin.text = gameManager.coins.toString()
+
+//        for (i in 0 until imagesList.size) {
+//            imagesList[i].setImageResource(gameManager.getQuestions()[i])
+//        }
+        binding.image.setImageResource(questionsList[gameManager.level].image)
 
         for (i in 0 until wordList.size) {
             if (gameManager.getWordSize() > i) {
@@ -207,9 +206,9 @@ class PlayActivity : AppCompatActivity() {
         }
     }
 
-    fun help(){
-        for (i in 0 until gameManager.getWordSize()){
-            if(wordList[i].text.isEmpty()){
+    fun help() {
+        for (i in 0 until gameManager.getWordSize()) {
+            if (wordList[i].text.isEmpty()) {
                 wordList[i].text = gameManager.getWordLowercase()[i].toString()
                 helpLetter(wordList[i])
                 break
@@ -217,12 +216,28 @@ class PlayActivity : AppCompatActivity() {
         }
     }
 
-    fun helpLetter(help : Button){
-        for (i in 0 until lettersList.size){
-            if (lettersList[i].text == help.text){
+    fun helpLetter(help: Button) {
+        for (i in 0 until lettersList.size) {
+            if (lettersList[i].text == help.text) {
                 lettersList[i].invisible()
                 break
             }
         }
+    }
+
+    override fun onStop() {
+//        var wordSave = ArrayList<String>()
+//        for (i in 0 until wordList.size){
+//            val d = wordList[i].text.toString()
+//            if (d.isEmpty()){
+//                wordSave.add("")
+//            }else{
+//                wordSave.add(d)
+//            }
+//        }
+
+        shared.setLevel(gameManager.level)
+        shared.setCoin(gameManager.coins)
+        super.onStop()
     }
 }

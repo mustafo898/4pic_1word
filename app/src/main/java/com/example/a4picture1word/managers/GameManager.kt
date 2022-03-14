@@ -9,7 +9,7 @@ class GameManager(
     var coins: Int,
 ) {
     private fun question() = questionsList[level]
-    fun getQuestions() = question().imageList
+//    fun getQuestions() = question().imageList
     fun getWord() = question().word
     fun getWordLowercase() = question().word.lowercase()
     fun getWordSize() = question().word.length
