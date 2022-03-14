@@ -1,16 +1,14 @@
 package com.example.a4picture1word
 
-import android.app.backup.SharedPreferencesBackupHelper
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
-import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
-import com.example.a4picture1word.databinding.ActivityMainBinding
 import com.example.a4picture1word.databinding.ActivityPlayBinding
+import com.example.a4picture1word.dialogs.Dialog
 import com.example.a4picture1word.managers.GameManager
 import com.example.a4picture1word.models.QuestionData
 import com.example.a4picture1word.shared.Shared
@@ -45,25 +43,23 @@ class PlayActivity : AppCompatActivity() {
         gameManager = GameManager(questionsList, shared.getLevel(),shared.getCoin())
         loadViews()
         loadDataToView()
-        binding.coin.text = "15"
+
         binding.coin.text = shared.getCoin().toString()
         binding.submit.setOnClickListener {
             if (check_()) {
-                Toast.makeText(this, "Win", Toast.LENGTH_LONG).show()
-                Thread.sleep(500)
 
+                WinDialogShow()
                 gameManager.level++
                 gameManager.coins += 4
-
                 var level_ = gameManager.level
-
                 binding.coin.text = gameManager.coins.toString()
                 binding.level.text = (++level_).toString()
                 getAllQuestions()
                 loadDataToView()
                 string = ""
             } else {
-                Toast.makeText(this, "Incorrect", Toast.LENGTH_SHORT).show()
+                ErrorDialogShow()
+                string=""
             }
         }
     }
@@ -127,7 +123,14 @@ class PlayActivity : AppCompatActivity() {
         }
 
         binding.btnHelp.setOnClickListener {
-            help()
+            if (gameManager.coins >= 4){
+                    gameManager.coins = gameManager.coins-4
+                help()
+                binding.coin.text = (gameManager.coins).toString()
+            }
+            else{
+                Toast.makeText(this, "Don't enough coin", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
@@ -186,9 +189,6 @@ class PlayActivity : AppCompatActivity() {
         binding.level.text = (++level_).toString()
         binding.coin.text = gameManager.coins.toString()
 
-//        for (i in 0 until imagesList.size) {
-//            imagesList[i].setImageResource(gameManager.getQuestions()[i])
-//        }
         binding.image.setImageResource(questionsList[gameManager.level].image)
 
         for (i in 0 until wordList.size) {
@@ -225,9 +225,35 @@ class PlayActivity : AppCompatActivity() {
         }
     }
 
-    override fun onStop() {
-        shared.setLevel(gameManager.level)
-        shared.setCoin(gameManager.coins)
-        super.onStop()
+//    override fun onStop() {
+//        shared.setLevel(gameManager.level)
+//        shared.setCoin(gameManager.coins)
+//        super.onStop()
+//    }
+
+    fun WinDialogShow() {
+        var builder: AestheticDialog.Builder =
+            AestheticDialog.Builder(
+                this,
+                DialogStyle.EMOTION,
+                DialogType.SUCCESS
+            );
+        builder.setTitle("CORRECT")
+        builder.setMessage("ANSWER : ${gameManager.getWord().uppercase()}")
+        builder.setAnimation(DialogAnimation.IN_OUT);
+        builder.show()
+    }
+
+    fun ErrorDialogShow() {
+        var builder: AestheticDialog.Builder =
+            AestheticDialog.Builder(
+                this,
+                DialogStyle.EMOTION,
+                DialogType.ERROR
+            );
+        builder.setTitle("INCORRECT")
+        builder.setMessage(string.uppercase())
+        builder.setAnimation(DialogAnimation.IN_OUT);
+        builder.show()
     }
 }

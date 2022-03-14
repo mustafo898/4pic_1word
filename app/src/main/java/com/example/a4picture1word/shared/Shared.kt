@@ -25,7 +25,7 @@ class Shared(context:Context) {
         editor.apply()
     }
 
-    fun getCoin() = preferences.getInt("COIN",0)
+    fun getCoin() = preferences.getInt("COIN",20)
 
     fun setHelper(helper:Int){
         editor = preferences.edit()
@@ -33,28 +33,28 @@ class Shared(context:Context) {
         editor.apply()
     }
 
-    fun getHelper() = preferences.getInt("HELPER",0)
-
-    fun setWord(letters : ArrayList<String>){
-        editor = preferences.edit()
-
-        letters.forEachIndexed { i, s ->
-            editor.putString("WORD_LETTER_$i",s)
-        }
-
-        editor.apply()
-    }
-
-    fun getWord():ArrayList<String>{
-        var letter = ArrayList<String>()
-
-        for (i in 0 until 6){
-            if (letter[i].isEmpty()){
-                letter.add(preferences.getString("GET_WORD_$i","").toString())
-            }else{
-                letter.add(preferences.getString("GET_WORD_$i",letter[i]).toString())
-            }
-        }
-        return letter
-    }
+//    fun getHelper() = preferences.getInt("HELPER",0)
+//
+//    fun setWord(letters : ArrayList<String>){
+//        editor = preferences.edit()
+//
+//        letters.forEachIndexed { i, s ->
+//            editor.putString("WORD_LETTER_$i",s)
+//        }
+//
+//        editor.apply()
+//    }
+//
+//    fun getWord():ArrayList<String>{
+//        var letter = ArrayList<String>()
+//
+//        for (i in 0 until 6){
+//            if (letter[i].isEmpty()){
+//                letter.add(preferences.getString("GET_WORD_$i","").toString())
+//            }else{
+//                letter.add(preferences.getString("GET_WORD_$i",letter[i]).toString())
+//            }
+//        }
+//        return letter
+//    }
 }

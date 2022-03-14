@@ -22,6 +22,6 @@ class MainActivity : AppCompatActivity() {
             var intent = Intent(this, PlayActivity::class.java)
             startActivity(intent)
         }
-        binding.coin.text = shared.getCoin().toString()
+        binding.coin.text = "${shared.getCoin()}"
     }
 }
