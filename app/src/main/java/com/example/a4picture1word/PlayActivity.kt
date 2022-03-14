@@ -225,19 +225,4 @@ class PlayActivity : AppCompatActivity() {
         }
     }
 
-    override fun onStop() {
-//        var wordSave = ArrayList<String>()
-//        for (i in 0 until wordList.size){
-//            val d = wordList[i].text.toString()
-//            if (d.isEmpty()){
-//                wordSave.add("")
-//            }else{
-//                wordSave.add(d)
-//            }
-//        }
-
-        shared.setLevel(gameManager.level)
-        shared.setCoin(gameManager.coins)
-        super.onStop()
-    }
 }

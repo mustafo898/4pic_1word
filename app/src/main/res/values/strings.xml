@@ -4,4 +4,7 @@
     <string name="clear">clear</string>
     <string name="help">help</string>
     <string name="submit">Submit</string>
+    <string name="play">PLAY</string>
+    <string name="correct">CORRECT</string>
+    <string name="_4">+4</string>
 </resources>

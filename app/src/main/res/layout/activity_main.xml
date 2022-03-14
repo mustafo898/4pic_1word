@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:gravity="center"
     tools:context=".MainActivity">
 
     <LinearLayout
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:elevation="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/button_darkgray_selector"
+        android:elevation="15dp"
         android:paddingVertical="10dp"
-        android:background="@drawable/button_darkgray_selector">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
             android:id="@+id/btnSettings"
@@ -49,7 +49,7 @@
 
             <Space
                 android:layout_width="10dp"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -64,10 +64,10 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:background="@drawable/bg_darkgray_selector"
-            android:paddingHorizontal="15dp"
             android:layout_margin="15dp"
-            android:gravity="center">
+            android:background="@drawable/bg_darkgray_selector"
+            android:gravity="center"
+            android:paddingHorizontal="15dp">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -77,8 +77,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-               android:padding="8dp"
-                android:text="120"
+                android:padding="8dp"
+                android:id="@+id/coin"
                 android:textColor="@android:color/white"
                 android:textSize="25sp" />
 
@@ -99,18 +99,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintTop_toTopOf="parent">
 
-       <!-- <ImageView
-            android:id="@+id/logo"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_alignStart="@+id/btnExit"
-            android:layout_alignEnd="@+id/btnExit"
-            android:src="@drawable/logo_splash" />-->
+        <!-- <ImageView
+             android:id="@+id/logo"
+             android:layout_width="150dp"
+             android:layout_height="150dp"
+             android:layout_alignStart="@+id/btnExit"
+             android:layout_alignEnd="@+id/btnExit"
+             android:src="@drawable/logo_splash" />-->
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnPlay"
@@ -119,7 +119,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/button_main_selector"
             android:padding="20dp"
-            android:text="PLAY"
+            android:text="@string/play"
             android:textColor="@color/white"
             android:textSize="25sp" />
 
