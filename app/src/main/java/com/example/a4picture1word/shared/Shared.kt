@@ -17,7 +17,15 @@ class Shared(context:Context) {
         editor.apply()
     }
 
-    fun getLevel() = preferences.getInt("LEVEL",0)
+    fun getSwitch() = preferences.getBoolean("SWITCH",true)
+
+    fun setSwitch(switch:Boolean){
+        editor = preferences.edit()
+        editor.putBoolean("SWITCH",switch)
+        editor.apply()
+    }
+
+    fun getLevel() = preferences.getInt("LEVEL",1)
 
     fun setCoin(coin:Int){
         editor = preferences.edit()
@@ -29,9 +37,11 @@ class Shared(context:Context) {
 
     fun setHelper(helper:Int){
         editor = preferences.edit()
-        editor.putInt("COIN",helper)
+        editor.putInt("HELP",helper)
         editor.apply()
     }
+
+    fun getHelper() = preferences.getInt("HELP",5)
 
 //    fun getHelper() = preferences.getInt("HELPER",0)
 //

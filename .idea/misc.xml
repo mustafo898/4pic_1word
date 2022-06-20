@@ -27,6 +27,37 @@
         <entry key="..\:/Android_Studio/4PICTURE1WORD2/app/src/main/res/layout/activity_settings.xml" value="0.3625" />
         <entry key="..\:/Android_Studio/4PICTURE1WORD2/app/src/main/res/layout/activity_splash.xml" value="0.3625" />
         <entry key="..\:/Android_Studio/4PICTURE1WORD2/app/src/main/res/layout/activity_win.xml" value="0.18" />
+        <entry key="..\:/Users/Composer/AndroidStudioProjects/4pic_1word/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2405" />
+        <entry key="..\:/Users/Composer/AndroidStudioProjects/4pic_1word/app/src/main/res/drawable/actionbar_background.xml" value="0.2405" />
+        <entry key="..\:/Users/Composer/AndroidStudioProjects/4pic_1word/app/src/main/res/drawable/bg_level.xml" value="0.2405" />
+        <entry key="..\:/Users/Composer/AndroidStudioProjects/4pic_1word/app/src/main/res/drawable/bg_win.xml" value="0.2405" />
+        <entry key="..\:/Users/Composer/AndroidStudioProjects/4pic_1word/app/src/main/res/drawable/button_darkgray_selector.xml" value="0.24" />
+        <entry key="..\:/Users/Composer/AndroidStudioProjects/4pic_1word/app/src/main/res/drawable/button_gray_selector.xml" value="0.2395" />
+        <entry key="..\:/Users/Composer/AndroidStudioProjects/4pic_1word/app/src/main/res/drawable/button_red_selector.xml" value="0.2085" />
+        <entry key="..\:/Users/Composer/AndroidStudioProjects/4pic_1word/app/src/main/res/drawable/delete.xml" value="0.2085" />
+        <entry key="..\:/Users/Composer/AndroidStudioProjects/4pic_1word/app/src/main/res/drawable/help.xml" value="0.2395" />
+        <entry key="..\:/Users/Composer/AndroidStudioProjects/4pic_1word/app/src/main/res/drawable/ic_baseline_brightness_auto_24.xml" value="0.2405" />
+        <entry key="..\:/Users/Composer/AndroidStudioProjects/4pic_1word/app/src/main/res/drawable/ic_coins.xml" value="0.2405" />
+        <entry key="..\:/Users/Composer/AndroidStudioProjects/4pic_1word/app/src/main/res/drawable/ic_delete.xml" value="0.2405" />
+        <entry key="..\:/Users/Composer/AndroidStudioProjects/4pic_1word/app/src/main/res/drawable/ic_help.xml" value="0.2405" />
+        <entry key="..\:/Users/Composer/AndroidStudioProjects/4pic_1word/app/src/main/res/drawable/ic_info.xml" value="0.2405" />
+        <entry key="..\:/Users/Composer/AndroidStudioProjects/4pic_1word/app/src/main/res/drawable/ic_keyboard_backspace_black_24dp.xml" value="0.2395" />
+        <entry key="..\:/Users/Composer/AndroidStudioProjects/4pic_1word/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2405" />
+        <entry key="..\:/Users/Composer/AndroidStudioProjects/4pic_1word/app/src/main/res/drawable/ic_level.xml" value="0.2405" />
+        <entry key="..\:/Users/Composer/AndroidStudioProjects/4pic_1word/app/src/main/res/drawable/ic_profile.xml" value="0.2405" />
+        <entry key="..\:/Users/Composer/AndroidStudioProjects/4pic_1word/app/src/main/res/drawable/ic_settings.xml" value="0.2405" />
+        <entry key="..\:/Users/Composer/AndroidStudioProjects/4pic_1word/app/src/main/res/layout/activity_fragment.xml" value="0.340625" />
+        <entry key="..\:/Users/Composer/AndroidStudioProjects/4pic_1word/app/src/main/res/layout/activity_info.xml" value="0.33" />
+        <entry key="..\:/Users/Composer/AndroidStudioProjects/4pic_1word/app/src/main/res/layout/activity_main.xml" value="0.3416666666666667" />
+        <entry key="..\:/Users/Composer/AndroidStudioProjects/4pic_1word/app/src/main/res/layout/activity_play.xml" value="0.3416666666666667" />
+        <entry key="..\:/Users/Composer/AndroidStudioProjects/4pic_1word/app/src/main/res/layout/activity_settings.xml" value="0.3416666666666667" />
+        <entry key="..\:/Users/Composer/AndroidStudioProjects/4pic_1word/app/src/main/res/layout/activity_splash.xml" value="0.3416666666666667" />
+        <entry key="..\:/Users/Composer/AndroidStudioProjects/4pic_1word/app/src/main/res/layout/activity_win.xml" value="0.3416666666666667" />
+        <entry key="..\:/Users/Composer/AndroidStudioProjects/4pic_1word/app/src/main/res/layout/fragment_info.xml" value="0.3416666666666667" />
+        <entry key="..\:/Users/Composer/AndroidStudioProjects/4pic_1word/app/src/main/res/layout/fragment_main.xml" value="0.3416666666666667" />
+        <entry key="..\:/Users/Composer/AndroidStudioProjects/4pic_1word/app/src/main/res/layout/fragment_play.xml" value="0.3416666666666667" />
+        <entry key="..\:/Users/Composer/AndroidStudioProjects/4pic_1word/app/src/main/res/layout/fragment_settings.xml" value="0.3416666666666667" />
+        <entry key="..\:/Users/Composer/AndroidStudioProjects/4pic_1word/app/src/main/res/layout/fragment_splash.xml" value="0.3416666666666667" />
       </map>
     </option>
   </component>
