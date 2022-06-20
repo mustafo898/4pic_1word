@@ -10,17 +10,6 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
         Shared(requireContext())
     }
 
-//    override fun onBackPressed() {
-//        AlertDialog.Builder(requireContext()).setIcon(android.R.drawable.ic_dialog_alert).setTitle("Exit")
-//            .setMessage("Are you sure?")
-//            .setPositiveButton("yes", DialogInterface.OnClickListener { dialog, which ->
-//                val intent = Intent(Intent.ACTION_MAIN)
-//                intent.addCategory(Intent.CATEGORY_HOME)
-//                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-//                startActivity(intent)
-//            }).setNegativeButton("no", null).show()
-//    }
-
     override fun onViewCreated() {
         Log.d("EEE", "onCreate: ${shared.getSwitch()}")
 

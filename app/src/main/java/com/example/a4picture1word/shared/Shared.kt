@@ -42,29 +42,4 @@ class Shared(context:Context) {
     }
 
     fun getHelper() = preferences.getInt("HELP",5)
-
-//    fun getHelper() = preferences.getInt("HELPER",0)
-//
-//    fun setWord(letters : ArrayList<String>){
-//        editor = preferences.edit()
-//
-//        letters.forEachIndexed { i, s ->
-//            editor.putString("WORD_LETTER_$i",s)
-//        }
-//
-//        editor.apply()
-//    }
-//
-//    fun getWord():ArrayList<String>{
-//        var letter = ArrayList<String>()
-//
-//        for (i in 0 until 6){
-//            if (letter[i].isEmpty()){
-//                letter.add(preferences.getString("GET_WORD_$i","").toString())
-//            }else{
-//                letter.add(preferences.getString("GET_WORD_$i",letter[i]).toString())
-//            }
-//        }
-//        return letter
-//    }
 }

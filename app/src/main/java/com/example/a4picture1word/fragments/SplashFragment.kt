@@ -12,16 +12,6 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>(FragmentSplashBinding
     private var i = 0
     private val handler = Handler()
 
-//    private fun startTimer() {
-//        window.setFlags(
-//            WindowManager.LayoutParams.FLAG_FULLSCREEN,
-//            WindowManager.LayoutParams.FLAG_FULLSCREEN
-//        )
-//        Handler().postDelayed({
-//
-//        }, 3000)
-//    }
-
     // progress barni ishlab turishi uchun
     private fun progress () {
         i = binding.progressBar.progress
