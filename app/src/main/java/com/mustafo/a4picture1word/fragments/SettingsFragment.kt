@@ -1,8 +1,8 @@
-package com.example.a4picture1word.fragments
+package com.mustafo.a4picture1word.fragments
 
-import com.example.a4picture1word.controller.extensions
-import com.example.a4picture1word.databinding.FragmentSettingsBinding
-import com.example.a4picture1word.shared.Shared
+import com.mustafo.a4picture1word.controller.extensions
+import com.mustafo.a4picture1word.databinding.FragmentSettingsBinding
+import com.mustafo.a4picture1word.shared.Shared
 
 
 class SettingsFragment : BaseFragment<FragmentSettingsBinding>(FragmentSettingsBinding::inflate) {

@@ -1,4 +1,4 @@
-package com.example.a4picture1word
+package com.mustafo.a4picture1word
 
 import org.junit.Test
 

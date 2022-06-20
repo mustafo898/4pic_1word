@@ -1,4 +1,4 @@
-package com.example.a4picture1word.utils
+package com.mustafo.a4picture1word.utils
 
 import android.view.View
 

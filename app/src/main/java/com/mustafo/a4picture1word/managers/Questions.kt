@@ -1,8 +1,8 @@
-package com.example.a4picture1word.managers
+package com.mustafo.a4picture1word.managers
 
 import android.util.Log
-import com.example.a4picture1word.R
-import com.example.a4picture1word.models.QuestionData
+import com.mustafo.a4picture1word.R
+import com.mustafo.a4picture1word.models.QuestionData
 
 class Questions {
     private val questionsList = ArrayList<QuestionData>()

@@ -1,6 +1,6 @@
-package com.example.a4picture1word.managers
+package com.mustafo.a4picture1word.managers
 
-import com.example.a4picture1word.models.QuestionData
+import com.mustafo.a4picture1word.models.QuestionData
 import java.util.*
 
 class GameManager(

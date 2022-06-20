@@ -8,7 +8,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.example.a4picture1word"
+        applicationId "com.mustafo.a4picture1word"
         minSdk 22
         targetSdk 32
         versionCode 1

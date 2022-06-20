@@ -1,10 +1,10 @@
-package com.example.a4picture1word
+package com.mustafo.a4picture1word
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.a4picture1word.controller.extensions
-import com.example.a4picture1word.databinding.ActivityFragmentBinding
-import com.example.a4picture1word.fragments.SplashFragment
+import com.mustafo.a4picture1word.controller.extensions
+import com.mustafo.a4picture1word.databinding.ActivityFragmentBinding
+import com.mustafo.a4picture1word.fragments.SplashFragment
 
 class MainActivity : AppCompatActivity(){
     lateinit var binding : ActivityFragmentBinding

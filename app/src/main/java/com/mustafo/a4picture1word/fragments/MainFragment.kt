@@ -1,9 +1,9 @@
-package com.example.a4picture1word.fragments
+package com.mustafo.a4picture1word.fragments
 
 import android.util.Log
-import com.example.a4picture1word.controller.extensions
-import com.example.a4picture1word.databinding.FragmentMainBinding
-import com.example.a4picture1word.shared.Shared
+import com.mustafo.a4picture1word.controller.extensions
+import com.mustafo.a4picture1word.databinding.FragmentMainBinding
+import com.mustafo.a4picture1word.shared.Shared
 
 class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::inflate) {
     private val shared by lazy {

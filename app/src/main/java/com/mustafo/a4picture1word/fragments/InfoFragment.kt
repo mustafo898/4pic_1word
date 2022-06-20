@@ -1,7 +1,7 @@
-package com.example.a4picture1word.fragments
+package com.mustafo.a4picture1word.fragments
 
-import com.example.a4picture1word.controller.extensions
-import com.example.a4picture1word.databinding.FragmentInfoBinding
+import com.mustafo.a4picture1word.controller.extensions
+import com.mustafo.a4picture1word.databinding.FragmentInfoBinding
 
 class InfoFragment : BaseFragment<FragmentInfoBinding>(FragmentInfoBinding::inflate) {
     override fun onViewCreated() {

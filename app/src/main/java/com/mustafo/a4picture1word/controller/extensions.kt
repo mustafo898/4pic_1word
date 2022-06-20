@@ -1,4 +1,4 @@
-package com.example.a4picture1word.controller
+package com.mustafo.a4picture1word.controller
 
 import androidx.annotation.IdRes
 import androidx.fragment.app.Fragment

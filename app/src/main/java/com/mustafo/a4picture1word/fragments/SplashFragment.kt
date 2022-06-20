@@ -1,10 +1,10 @@
-package com.example.a4picture1word.fragments
+package com.mustafo.a4picture1word.fragments
 
 import android.annotation.SuppressLint
 import android.os.Handler
 import android.view.View
-import com.example.a4picture1word.controller.extensions
-import com.example.a4picture1word.databinding.FragmentSplashBinding
+import com.mustafo.a4picture1word.controller.extensions
+import com.mustafo.a4picture1word.databinding.FragmentSplashBinding
 
 @SuppressLint("CustomSplashScreen")
 class SplashFragment : BaseFragment<FragmentSplashBinding>(FragmentSplashBinding::inflate) {

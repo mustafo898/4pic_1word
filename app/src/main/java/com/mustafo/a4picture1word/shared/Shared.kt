@@ -1,8 +1,7 @@
-package com.example.a4picture1word.shared
+package com.mustafo.a4picture1word.shared
 
 import android.content.Context
 import android.content.SharedPreferences
-import java.util.ArrayList
 
 class Shared(context:Context) {
 

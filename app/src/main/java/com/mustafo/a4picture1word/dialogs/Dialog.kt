@@ -1,9 +1,8 @@
-package com.example.a4picture1word.dialogs
+package com.mustafo.a4picture1word.dialogs
 
 import android.app.Activity
 import android.content.Context
 import com.thecode.aestheticdialogs.AestheticDialog
-import com.thecode.aestheticdialogs.DialogAnimation
 import com.thecode.aestheticdialogs.DialogStyle
 import com.thecode.aestheticdialogs.DialogType
 
