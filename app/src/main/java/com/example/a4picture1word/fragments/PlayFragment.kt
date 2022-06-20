@@ -42,8 +42,9 @@ class PlayFragment : BaseFragment<FragmentPlayBinding>(FragmentPlayBinding::infl
         loadViews()
         loadDataToView()
 
-        binding.coin.text = shared.getCoin().toString()
+        binding.coin.text = gameManager.coins.toString()
         binding.level.text = gameManager.level.toString()
+
         binding.btnBack.setOnClickListener {
             extensions.controller?.startMainFragment(MainFragment())
         }
@@ -52,25 +53,22 @@ class PlayFragment : BaseFragment<FragmentPlayBinding>(FragmentPlayBinding::infl
             clear()
         }
 
-        binding.btnHelp.setOnClickListener {
-            if (gameManager.help >= 1){
-                binding.btnHelp.setImageResource(R.drawable.ic_help)
-            }else if (gameManager.help == 0){
-                binding.btnHelp.setImageResource(R.drawable.ic_coins)
-            }
-
+        binding.layoutHelp.setOnClickListener {
             if (gameManager.help <= 0){
-                if (gameManager.coins >= 4){
-                    gameManager.coins-=4
+                if (gameManager.coins >= 20){
+                    gameManager.coins-=20
                     binding.coin.text = gameManager.coins.toString()
-                    shared.setHelper(gameManager.help)
                     shared.setCoin(gameManager.coins)
+//                    binding.btnHelp.setImageResource(R.drawable.ic_coins)
+                    binding.change.text = 20.toString()
                     help()
                 }else{
                     Toast.makeText(requireContext(), "Don't enough coins", Toast.LENGTH_SHORT).show()
                 }
             }else if(gameManager.help >= 0){
+                shared.setHelper(gameManager.help)
                 gameManager.help-=1
+                binding.change.text = gameManager.help.toString()
                 help()
             }
         }
@@ -151,8 +149,10 @@ class PlayFragment : BaseFragment<FragmentPlayBinding>(FragmentPlayBinding::infl
 
             if (gameManager.help >= 1){
                 binding.btnHelp.setImageResource(R.drawable.ic_help)
+                binding.change.text = gameManager.help.toString()
             }else if (gameManager.help == 0){
                 binding.btnHelp.setImageResource(R.drawable.ic_coins)
+                binding.change.text = 20.toString()
             }
 
             string = ""
@@ -203,6 +203,13 @@ class PlayFragment : BaseFragment<FragmentPlayBinding>(FragmentPlayBinding::infl
                 break
             }
         }
+
+        if (gameManager.help >= 1){
+            binding.btnHelp.setImageResource(R.drawable.ic_help)
+        }else if (gameManager.help == 0){
+            binding.btnHelp.setImageResource(R.drawable.ic_coins)
+            binding.change.text = 20.toString()
+        }
         check()
     }
 
@@ -215,7 +222,7 @@ class PlayFragment : BaseFragment<FragmentPlayBinding>(FragmentPlayBinding::infl
         if (string == gameManager.getWord()){
             Log.d("aaa", "loadViews: $string")
             winDialogShow()
-            gameManager.coins+=4
+            gameManager.coins+=5
             gameManager.level+=1
             loadDataToView()
             binding.coin.text = gameManager.coins.toString()

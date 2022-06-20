@@ -33,7 +33,7 @@ class Shared(context:Context) {
         editor.apply()
     }
 
-    fun getCoin() = preferences.getInt("COIN",20)
+    fun getCoin() = preferences.getInt("COIN",60)
 
     fun setHelper(helper:Int){
         editor = preferences.edit()
